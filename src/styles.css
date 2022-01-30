@@ -1,0 +1,116 @@
+.container {
+  background: radial-gradient(
+    circle at 7.5% 24%,
+    rgb(237, 161, 193) 0%,
+    rgb(250, 178, 172) 25.5%,
+    rgb(190, 228, 210) 62.3%,
+    rgb(215, 248, 247) 93.8%
+  );
+  border: 1px solid #1377a5;
+  border-radius: 30px;
+  color: #041c32;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 60px;
+}
+.search {
+  padding: 25px;
+}
+h5 {
+  text-align: right;
+  font-style: italic;
+}
+h1 {
+  color: #04293a;
+  font-size: 40px;
+  font-style: italic;
+  padding: 12px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+h7 {
+  font-size: 25px;
+  font-style: italic;
+}
+small {
+  color: #064663;
+}
+.centerElement {
+  background: radial-gradient(
+    401px at 50.6% -0.3%,
+    rgba(255, 255, 255, 0.31) 1.2%,
+    rgb(36, 212, 219) 100.2%
+  );
+  border: 5px solid #064663;
+  border-radius: 60px;
+  box-shadow: 2px 2px 5px #04293a;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+}
+.form-control {
+  border-radius: 50px;
+}
+.btn-primary {
+  background: #064663;
+  border: 1px solid #1377a5;
+  border-radius: 50px;
+  box-shadow: 1px 1px 3px #04293a;
+  transition: all 2ms ease-in-out;
+}
+.btn-primary:hover {
+  background-color: #1377a5;
+  border: 1px solid #04293a;
+  font-style: italic;
+}
+.locationButton {
+  background: #1377a5;
+  border: 1px solid #04293a;
+}
+.locationButton:hover {
+  background-color: #064663;
+  border: 1px solid #1377a5;
+}
+.weatherSymbol {
+  font-size: 70px;
+}
+.mainTemperature {
+  font-size: 50px;
+}
+.high {
+  font-size: 20px;
+}
+.variables {
+  color: #064663;
+}
+.celcius {
+  color: #04293a;
+}
+.celcius:hover {
+  color: #1377a5;
+}
+.col {
+  background: linear-gradient(
+    108.1deg,
+    rgb(167, 220, 225) 11.2%,
+    rgb(217, 239, 242) 88.9%
+  );
+  border: 2px solid #064663;
+  border-radius: 25px;
+  box-shadow: 1px 1px 3px #04293a;
+  margin: 10px;
+  padding: 5px;
+}
+.forecast {
+  padding: 20px;
+  text-align: center;
+}
+.img {
+  font-size: 35px;
+}
+.temp {
+  font-size: 20px;
+}
