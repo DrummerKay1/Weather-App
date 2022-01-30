@@ -114,3 +114,11 @@ small {
 .temp {
   font-size: 20px;
 }
+.gitLink {
+  font-size: 16px;
+  font-style: italic;
+  padding: 25px;
+}
+.gitLink:hover {
+  color: #1377a5;
+}
