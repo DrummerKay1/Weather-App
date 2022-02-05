@@ -1,4 +1,5 @@
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -41,6 +42,9 @@ function displayCurrentWeather(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#time").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
 }
 function searchCity(city) {
   let apiKey = "989bcbe68d0cc1b00b25e60364c50c46";
@@ -65,10 +69,6 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-
-let dateElement = document.querySelector("#time");
-let currentTime = new Date();
-dateElement.innerHTML = formatDate(currentTime);
 
 let cityElement = document.querySelector("h1");
 let searchForm = document.querySelector("#search-form");
