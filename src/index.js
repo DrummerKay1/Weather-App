@@ -87,6 +87,15 @@ function displayCelcius(event) {
     ((feelsLike - 32) * 5) / 9
   );
 }
+function displayFahrenheit(event) {
+  event.preventDefault();
+  document.querySelector("#main-temperature").innerHTML = Math.round(
+    mainFahrenheitTemperature
+  );
+  document.querySelector("#high-of").innerHTML = Math.round(highOf);
+  document.querySelector("#low-of").innerHTML = Math.round(lowOf);
+  document.querySelector("#feels-like").innerHTML = Math.round(feelsLike);
+}
 let mainFahrenheitTemperature = null;
 let highOf = null;
 let lowOf = null;
@@ -100,4 +109,7 @@ locationButton.addEventListener("click", getCurrentLocation);
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelcius);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
 searchCity("San Diego");
