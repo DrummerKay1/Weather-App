@@ -24,21 +24,19 @@ function formatDate(timestamp) {
 }
 function displayCurrentWeather(response) {
   let iconElement = document.querySelector("#main-weather-symbol");
+  mainFahrenheitTemperature = response.data.main.temp;
+  highOf = response.data.main.temp_max;
+  lowOf = response.data.main.temp_min;
+  feelsLike = response.data.main.feels_like;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#weather-type").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#main-temperature").innerHTML = Math.round(
-    response.data.main.temp
+    mainFahrenheitTemperature
   );
-  document.querySelector("#high-of").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  document.querySelector("#low-of").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#feels-like").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
+  document.querySelector("#high-of").innerHTML = Math.round(highOf);
+  document.querySelector("#low-of").innerHTML = Math.round(lowOf);
+  document.querySelector("#feels-like").innerHTML = Math.round(feelsLike);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
@@ -74,11 +72,32 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-
+function displayCelcius(event) {
+  event.preventDefault();
+  document.querySelector("#main-temperature").innerHTML = Math.round(
+    ((mainFahrenheitTemperature - 32) * 5) / 9
+  );
+  document.querySelector("#high-of").innerHTML = Math.round(
+    ((highOf - 32) * 5) / 9
+  );
+  document.querySelector("#low-of").innerHTML = Math.round(
+    ((lowOf - 32) * 5) / 9
+  );
+  document.querySelector("#feels-like").innerHTML = Math.round(
+    ((feelsLike - 32) * 5) / 9
+  );
+}
+let mainFahrenheitTemperature = null;
+let highOf = null;
+let lowOf = null;
+let feelsLike = null;
 let cityElement = document.querySelector("h1");
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentLocation);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelcius);
 searchCity("San Diego");
