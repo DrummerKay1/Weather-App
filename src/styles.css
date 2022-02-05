@@ -79,6 +79,8 @@ small {
 }
 .mainTemperature {
   font-size: 50px;
+  position: relative;
+  left: 6px;
 }
 .high {
   font-size: 20px;
@@ -121,4 +123,9 @@ small {
 }
 .gitLink:hover {
   color: #1377a5;
+}
+.units {
+  position: relative;
+  font-size: 20px;
+  top: -18px;
 }
