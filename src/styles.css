@@ -88,9 +88,6 @@ small {
 .variables {
   color: #064663;
 }
-.celcius {
-  color: #04293a;
-}
 .celcius:hover {
   color: #1377a5;
 }
@@ -122,6 +119,7 @@ small {
   padding-top: 10px;
   padding-bottom: 30px;
   text-align: center;
+  text-decoration: none;
 }
 .gitLink:hover {
   color: #1377a5;
@@ -131,5 +129,11 @@ small {
   line-height: 1;
   font-size: 16px;
   top: -23px;
-  
+}
+.units .active {
+  color: #041c32;
+  cursor: default;
+}
+.units .active:hover {
+  color: #041c32;
 }
