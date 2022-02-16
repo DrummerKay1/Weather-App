@@ -22,6 +22,29 @@ function formatDate(timestamp) {
   let day = days[dayIndex];
   return `${day} ${hours}:${minutes}`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col">
+    <h7>${day}</h7>
+    <div class="img">
+    ☁
+    </div>
+    <div class="temp">
+    67°<br>
+    <small> 54°</small>
+    </div>
+    </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function displayCurrentWeather(response) {
   let iconElement = document.querySelector("#main-weather-symbol");
   mainFahrenheitTemperature = response.data.main.temp;
@@ -117,3 +140,4 @@ celciusLink.addEventListener("click", displayCelcius);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
 searchCity("San Diego");
+displayForecast();
