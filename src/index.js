@@ -22,7 +22,8 @@ function formatDate(timestamp) {
   let day = days[dayIndex];
   return `${day} ${hours}:${minutes}`;
 }
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -45,6 +46,15 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "989bcbe68d0cc1b00b25e60364c50c46";
+  let units = "imperial";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=${units}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayCurrentWeather(response) {
   let iconElement = document.querySelector("#main-weather-symbol");
   mainFahrenheitTemperature = response.data.main.temp;
@@ -71,6 +81,7 @@ function displayCurrentWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "989bcbe68d0cc1b00b25e60364c50c46";
@@ -140,4 +151,3 @@ celciusLink.addEventListener("click", displayCelcius);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
 searchCity("San Diego");
-displayForecast();
