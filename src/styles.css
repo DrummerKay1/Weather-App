@@ -13,9 +13,6 @@
   margin-bottom: 10px;
   padding: 60px;
 }
-.search {
-  padding: 25px;
-}
 h5 {
   text-align: right;
   font-style: italic;
@@ -31,11 +28,15 @@ ul {
   padding: 0;
 }
 h7 {
+  color: #04293a;
   font-size: 25px;
   font-style: italic;
 }
 small {
   color: #064663;
+}
+.search {
+  padding: 25px;
 }
 .centerElement {
   background: radial-gradient(
@@ -74,18 +75,20 @@ small {
   background-color: #064663;
   border: 1px solid #1377a5;
 }
-.weatherSymbol {
-  font-size: 68px;
-}
 .mainTemperature {
   font-size: 50px;
   position: relative;
   left: 15px;
+  color: #04293a;
+}
+.weatherSymbol {
+  font-size: 68px;
 }
 .high {
   font-size: 20px;
 }
-.variables {
+.variables,
+.minTemp {
   color: #064663;
 }
 .celcius:hover {
